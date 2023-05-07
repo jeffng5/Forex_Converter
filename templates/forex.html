@@ -1,0 +1,17 @@
+<form action='/show_rate' class="current-currency" method="POST">
+    <label>Converting from</label>
+    <input type = "text" placeholder="converting from" name="currency">
+    <label>Converting to</label>
+    <input type = "text" placeholder="converting to" name="change-currency">
+    <label>Amount to be converted</label>
+    <input type = "text" placeholder="amount" name="amount">
+    <button>SUBMIT</button>
+</form>
+
+
+CURRENCIES
+{{obj}}
+
+{% for msg in get_flashed_messages() %}
+    <p>{{msg}}</p>
+{% endfor %}
