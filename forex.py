@@ -45,10 +45,14 @@ def show_exchange():
 
     
     curr= request.form['currency'] # currency convert from rate
+    assert type(curr)==float
     into= request.form['change-currency'] # currency convert to rate
+    assert type(into)==float
     amt= request.form['amount'] # amoubnt of currency you want exchanged
+    assert type(amt)==float
     curr=obj.get(curr) #gets the value 
     into=obj.get(into) #gets the value
     thing= round(float(into/curr) * float(int(amt)), 2) #formula to convert the value
-    return render_template('forex1.html', thing=thing, curr=curr, into=into), curr # display currency yield
+    assert type(thing) == float
+    return render_template('forex1.html', thing=thing, curr=curr, into=into) # display currency yield
    
